@@ -39,7 +39,7 @@ palette <- data.table(
 palette <- data.table(
   bg            = '#f8f7f7',
   panel         = '#647886',
-  txt           = '#000000',
+  txt           = '#647886',
   panel.txt     = '#000000',
   fg.0          = '#647886',
   fg.0.fade     = '#64788615',
@@ -51,7 +51,8 @@ palette <- data.table(
   red           = '#D35F80',
   green         = '#8CC6D0',
   dropdown      = '#f6f6f6',
-  side.panel.bg = '#efeded90'
+  side.panel.bg = '#efeded90',
+  caret         = '#f8f7f7'
 )
 
 
@@ -66,13 +67,17 @@ getStyle <- function(){
   
   tagList <- list(
     #font
-       tags$head(tags$style(paste0('* {font-family: ',windowsFonts(fontFamily),';font-size:105%}')))
-       ,tags$head(tags$style(paste0('ul{font-family: ',windowsFonts(fontFamily),';font-size:95%}')))
+       tags$head(tags$style(paste0('* {font-family: ',windowsFonts(fontFamily),';font-size:105%;color:',palette$txt,'}')))
+      ,tags$head(tags$style(paste0('ul{font-family: ',windowsFonts(fontFamily),';font-size:95%;color:',palette$txt,'}')))
        # ,tags$head(tags$style(paste0('h2{font-family: ',windowsFonts(fontFamily),';}')))
        # ,tags$head(tags$style(paste0('h1{font-family: ',windowsFonts(fontFamily),';}')))
-       # ,tags$head(tags$style(paste0('h3{font-family: ',windowsFonts(fontFamily),';font-size:100%}')))
+       ,tags$head(tags$style(paste0('h1{font-family: ',windowsFonts(fontFamily),';color:',palette$txt,'}')))
+       ,tags$head(tags$style(paste0('h2{font-family: ',windowsFonts(fontFamily),';color:',palette$txt,'}')))
+       ,tags$head(tags$style(paste0('h3{font-family: ',windowsFonts(fontFamily),';color:',palette$txt,'}')))
        # ,tags$head(tags$style(paste0('h2{font-family: ',windowsFonts(fontFamily),';font-size:100%}')))
-    
+       
+      ,tags$head(tags$style(paste0('.form-control{color:',palette$txt,';}')))
+      ,tags$head(tags$style(paste0('.caret{color:',palette$caret,';}')))
 
     # navbar  
     ,tags$style(HTML('.nav-tabs {border-bottom: 1px solid #dfdfdf}'))
