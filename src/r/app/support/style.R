@@ -18,29 +18,33 @@ windowsFonts(arial = "Arial Unicode MS",
 
 
 palette <- data.table(
-  bg        = '#ffffff',
-  panel     = '#006192',
-  # panel     = '#3c80a3',
-  txt       = '#000000',
-  panel.txt = '#000000',
-  fg.0      = '#006192',
-  # fg.0      = '#3c80a3',
-  fg.0.fade = '#00619215',
-  fg.1      = '#8CC6D0',
-  fg.2      = '#DFEFF2',
-  fg.3      = '#FFF2CD',
-  fg.4      = '#D35F80',
-  dark      = '#00496D',
-  red       = '#D35F80',
-  green     = '#8CC6D0',
-  dropdown  = '#f6f6f6'
+  bg            = '#ffffff',
+  panel         = '#006192',
+  txt           = '#000000',
+  panel.txt     = '#ffffff',
+  fg.0          = '#006192',
+  fg.0.fade     = '#00619215',
+  fg.1          = '#8CC6D0',
+  fg.2          = '#DFEFF2',
+  fg.3          = '#FFF2CD',
+  fg.4          = '#D35F80',
+  dark          = '#00496D',
+  red           = '#D35F80',
+  green         = '#8CC6D0',
+  dropdown      = '#f6f6f6',
+  side.panel.bg = '#ffffff',
+  caret         = '#ffffff',
+  dt.head       = '#ffffff',
+  h1            = '#000000',
+  h2            = '#000000',
+  h3            = '#000000'
 )
 
 palette <- data.table(
   bg            = '#f8f7f7',
   panel         = '#647886',
   txt           = '#536470',
-  panel.txt     = '#536470',
+  panel.txt     = '#f8f7f7',
   fg.0          = '#647886',
   fg.0.fade     = '#64788615',
   fg.1          = '#8CC6D0',
@@ -59,6 +63,28 @@ palette <- data.table(
   h3            = '#536470'
 )
 
+# palette <- data.table(
+#   bg            = '#536470',
+#   panel         = '#536470',
+#   txt           = '#f8f7f7',
+#   panel.txt     = '#f8f7f7',
+#   fg.0          = '#647886',
+#   fg.0.fade     = '#64788615',
+#   fg.1          = '#8CC6D0',
+#   fg.2          = '#DFEFF2',
+#   fg.3          = '#FFF2CD',
+#   fg.4          = '#D35F80',
+#   dark          = '#647886',
+#   red           = '#D35F80',
+#   green         = '#8CC6D0',
+#   dropdown      = '#536470',
+#   side.panel.bg = '#647886',
+#   caret         = '#f8f7f7',
+#   dt.head       = '#f8f7f7',
+#   h1            = '#f8f7f7',
+#   h2            = '#f8f7f7',
+#   h3            = '#f8f7f7'
+# )
 
 
 # par(family=windowsFont(fontFamily))
@@ -107,7 +133,7 @@ getStyle <- function(){
        .navbar-default .navbar-nav>.open>a:hover,
        .navbar-default .navbar-nav>.open>a:focus {
          background-color: ",palette$dark,";
-         color: ",palette$bg,";
+         color: ",palette$panel.txt,";
        }")))
     
     ,tags$style(HTML('body {padding-right:0px}'))
@@ -122,12 +148,12 @@ getStyle <- function(){
     ,tags$style(HTML(paste0(
       '.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a, .navbar-fixed-top
             {background-color:',palette$panel,';
-             color:',palette$bg,';
+             color:',palette$panel.txt,';
              height: 70px;}')))
     
     ,tags$style(HTML(paste0('
           .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-            color: ',palette$bg,';
+            color: ',palette$panel.txt,';
             background-color:',palette$dark,';
             height: 70px;}')))
     
