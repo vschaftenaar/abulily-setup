@@ -57,8 +57,8 @@ palette <- data.table(
   dropdown      = '#f6f6f6',
   side.panel.bg = '#efeded90',
   caret         = '#f9f9f9',
-  dt.head.txt   = 'f9f9f9',
-  dt.head.bg    = '647886',
+  dt.head.txt   = '#f9f9f9',
+  dt.head.bg    = '#647886',
   h1            = '#536470',
   h2            = '#536470',
   h3            = '#536470'
