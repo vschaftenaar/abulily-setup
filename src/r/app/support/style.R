@@ -41,7 +41,7 @@ palette <- data.table(
 )
 
 palette <- data.table(
-  bg            = '#f8f7f7',
+  bg            = '#f9f9f9',
   panel         = '#647886',
   txt           = '#536470',
   panel.txt     = '#f8f7f7',
@@ -56,8 +56,9 @@ palette <- data.table(
   green         = '#8CC6D0',
   dropdown      = '#f6f6f6',
   side.panel.bg = '#efeded90',
-  caret         = '#f8f7f7',
-  dt.head       = '#f8f7f7',
+  caret         = '#f9f9f9',
+  dt.head.txt   = 'f9f9f9',
+  dt.head.bg    = '647886',
   h1            = '#536470',
   h2            = '#536470',
   h3            = '#536470'
@@ -97,14 +98,11 @@ getStyle <- function(){
   
   tagList <- list(
     #font
-    tags$head(tags$style(paste0('* {font-family: ',windowsFonts(fontFamily),';font-size:105%;color:',palette$txt,'}')))
-    ,tags$head(tags$style(paste0('ul{font-family: ',windowsFonts(fontFamily),';font-size:95%;color:',palette$txt,'}')))
-    # ,tags$head(tags$style(paste0('h2{font-family: ',windowsFonts(fontFamily),';}')))
-    # ,tags$head(tags$style(paste0('h1{font-family: ',windowsFonts(fontFamily),';}')))
+    tags$head(tags$style(paste0('div{font-family: ',windowsFonts(fontFamily),';font-size:105%;color:',palette$txt,'}')))
+    ,tags$head(tags$style(paste0('ul{font-family: ',windowsFonts(fontFamily),';font-size:105%;color:',palette$txt,'}')))
     ,tags$head(tags$style(paste0('h1{font-family: ',windowsFonts(fontFamily),';color:',palette$h1,'}')))
     ,tags$head(tags$style(paste0('h2{font-family: ',windowsFonts(fontFamily),';color:',palette$h2,'}')))
     ,tags$head(tags$style(paste0('h3{font-family: ',windowsFonts(fontFamily),';color:',palette$h3,'}')))
-    # ,tags$head(tags$style(paste0('h2{font-family: ',windowsFonts(fontFamily),';font-size:100%}')))
     
     ,tags$head(tags$style(paste0('.form-control{color:',palette$txt,';}')))
     ,tags$head(tags$style(paste0('.caret{color:',palette$caret,';}')))
@@ -119,7 +117,7 @@ getStyle <- function(){
      .nav-tabs>li.active>a:hover,
      .nav-tabs>li.active>a:active:hover,
      .nav-tabs>li.active>a:focus:hover
-        {color:',palette$panel.txt,';background-color:','red',';box-shadow: inset 0 -1px 0 ',palette$panel,';}')))
+        {color:',palette$panel.txt,';box-shadow: inset 0 -1px 0 ',palette$panel,';}')))
     
     ,tags$style(HTML('.container-fluid {
        margin-right: auto;
@@ -149,7 +147,8 @@ getStyle <- function(){
       '.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a, .navbar-fixed-top
             {background-color:',palette$panel,';
              color:',palette$panel.txt,';
-             height: 70px;}')))
+             height: 70px;
+             font-size:105%;}')))
     
     ,tags$style(HTML(paste0('
           .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
@@ -196,7 +195,7 @@ getStyle <- function(){
     
     #pickerInput
     ,tags$style(HTML(paste0(".dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus
-                              {color:",palette$bg,";text-decoration: none;outline: 0;background-color:",palette$fg.0,"}")))
+                              {outline: 0;background-color:",palette$fg.0,";}")))
     
     ,tags$style(HTML(paste0(".btn{text-transform: none;border: solid 1px ",palette$fg.0,"10;box-shadow: 0 8px 10px -10px ",col.shadow,"50}")))
     ,tags$style(HTML(paste0(".btn:hover{text-transform: none;border: solid 1px ",palette$fg.0,"30;box-shadow: 0 12px 5px -5px ",col.shadow,"50;background-color:",palette$bg,"}")))
@@ -207,8 +206,8 @@ getStyle <- function(){
     #data table
     ,tags$head(tags$style(paste0("table.dataTable tbody tr.even  {color:",palette$txt,";background-color:",palette$bg," !important;}")))
     ,tags$head(tags$style(paste0("table.dataTable tbody tr.odd   {color:",palette$txt,";background-color:",palette$fg.0.fade," !important;}")))
-    ,tags$head(tags$style(paste0("table.dataTable thead tr       {color:",palette$bg,"; background-color:",palette$fg.0," !important;}")))
-    ,tags$head(tags$style(paste0("table.dataTable thead *        {color:",palette$dt.head," !important;}")))
+    ,tags$head(tags$style(paste0("table.dataTable thead tr       {color:",palette$bg,";background-color:",palette$fg.0," !important;}")))
+    ,tags$head(tags$style(paste0("table.dataTable thead *        {color:",palette$dt.head.txt," !important;background-color:",palette$dt.head.bg,";}")))
     
     
     #panel
@@ -232,7 +231,7 @@ getStyle <- function(){
     
     #dropdown-menu
     ,tags$style(HTML(paste0("
-      .dropdown-menu {background-color:",palette$dropdown,";}")))
+      .dropdown-menu {background-color:",palette$dropdown,";font-size:105%;}")))
     
     #topbar
     ,tags$style(HTML('#logo-id {position: fixed;right:  25px;top: 3px;}'))

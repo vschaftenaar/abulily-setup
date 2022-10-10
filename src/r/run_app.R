@@ -18,7 +18,7 @@ source('./src/r/app/support/style.r')
 source('./src/r/app/support/func.r')
 
 
-side.logo      <- list(size='50%',  opacity=.05)
+side.logo      <- list(size='50%',  opacity=.10)
 frontpage.logo <- list(size='300px',opacity=.3)
 
 dynamic.pages <- 1:10
