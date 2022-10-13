@@ -1,5 +1,8 @@
 options(scipen = 999)
 
+
+message('loading packaes...')
+
 packages <- c(
   "shiny"
   ,"shinythemes"
@@ -22,7 +25,7 @@ pkgTest <- function(x)
 nPack=length(packages)
 
 for(i in 1:nPack){
-  chk=pkgTest(packages[i])
+  chk=suppressMessages(pkgTest(packages[i]))
 }
 
 
@@ -33,7 +36,7 @@ rm('i')
 rm('chk')
 
 
-if(!require(abulily)){
+suppressMessages(if(!require(abulily)){
   install_personal_github <- function(user,package,path,delete_tar=T){
     
     lnk <- paste0('https://github.com/',user,'/',package,'/archive/main.tar.gz')
@@ -54,6 +57,6 @@ if(!require(abulily)){
   }else{
     'abulily loaded'
   }
-
+)
 
 

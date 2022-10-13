@@ -21,7 +21,8 @@ tab_010 <- function(){
           <li>developer: <a href = "mailto: v.schaftenaar@gmail.com">Vincent Schaftenaar</a></li>
         </ul>'
       )
-      ,div(id='logo_black', img(src='logo_black.png',height= frontpage.logo$size,width='auto',align='right'),style=paste0('margin-top:-25px;margin-right:50px;opacity:',frontpage.logo$opacity,';'))
+      ,div(id='logo_black', img(src='logo_black.png',height= frontpage.logo$size,width='auto',align='left'),style=paste0('margin-top:-25px;margin-left:350px;opacity:',frontpage.logo$opacity,';'))
+      # ,div(id='logo_black', img(src='logo_black.png',height= frontpage.logo$size,width='auto',align='right'),style=paste0('margin-top:-25px;margin-right:50px;opacity:',frontpage.logo$opacity,';'))
       # ,div(id='log0_black', img(src='logo_black.png',height= '350px',width='auto'),style='margin-top:-150px;margin-left:350px;opacity: .2;')
     ))
   
